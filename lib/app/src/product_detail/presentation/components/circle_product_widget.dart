@@ -14,7 +14,6 @@ class CircleProductWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     double outerCircleRadius = radius;
     double middleCircleRadius = radius * 0.7;
     double innerCircleRadius = radius * 0.48;

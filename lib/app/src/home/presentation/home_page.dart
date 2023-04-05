@@ -3,8 +3,6 @@ import 'dart:ui';
 import 'package:beer_store/app/config/theme/app_colors.dart';
 import 'package:beer_store/app/shared/widgets/avatar_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -143,21 +141,21 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     GestureDetector(
                                       onTap: () => _onTap(0),
                                       child: const FaIcon(
-                                        FontAwesomeIcons.home,
+                                        FontAwesomeIcons.house,
                                         color: AppColors.secondaryColor,
                                       ),
                                     ),
                                     GestureDetector(
                                       onTap: () => _onTap(1),
                                       child: const FaIcon(
-                                        FontAwesomeIcons.search,
+                                        FontAwesomeIcons.magnifyingGlass,
                                         color: AppColors.secondaryColor,
                                       ),
                                     ),
                                     GestureDetector(
                                       onTap: () => _onTap(2),
                                       child: const FaIcon(
-                                        FontAwesomeIcons.shoppingCart,
+                                        FontAwesomeIcons.cartShopping,
                                         color: AppColors.secondaryColor,
                                       ),
                                     ),

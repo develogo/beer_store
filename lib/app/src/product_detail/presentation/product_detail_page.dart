@@ -78,7 +78,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                 children: [
                   Positioned(
                     top: 0,
-                    child: Container(
+                    child: SizedBox(
                       height: size.height * .5,
                       width: size.width,
                       child: Stack(
@@ -310,7 +310,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return new SizedBox.expand(child: child);
+    return SizedBox.expand(child: child);
   }
 
   @override

@@ -9,7 +9,7 @@ class ProductCounter extends StatefulWidget {
   const ProductCounter({Key? key, this.initialValue = 0}) : super(key: key);
 
   @override
-  _ProductCounterState createState() => _ProductCounterState();
+  State<ProductCounter> createState() => _ProductCounterState();
 }
 
 class _ProductCounterState extends State<ProductCounter> {
