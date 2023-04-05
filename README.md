@@ -1,8 +1,8 @@
-<p align="center">
+<!-- <p align="center">
   <a href="https://develogo.com">
     <img alt="Portfolio" src="./src/images/mdg.png" width="60" />
   </a>
-</p>
+</p> -->
 <h1 align="center">
   Beer Store
 </h1>
@@ -25,7 +25,6 @@
 </a>
 </p>
 
-<p align="center"><img src="./src/images/github-profile-readme-generator.gif" alt="github-profile-readme-generator gif" /></p>
 
 <p align="center">
     <a href="https://beerstore.develogo.com" target="blank">View Demo</a>
@@ -33,13 +32,12 @@
     <a href="https://github.com/develogo/beer_store/issues/new/choose">Report Bug</a>
 </p>
 
-## 🚀 Demo
+## 🚀 Screenshots
 
-<a href="https://develogo.com" target="blank">
-<img src="https://develogo.com" />
-</a>
+<img src="https://raw.githubusercontent.com/develogo/beer_store/main/assets/prints/1.jpg" alt="Logo" height="500"/>
+<img src="https://raw.githubusercontent.com/develogo/beer_store/main/assets/prints/2.jpg" alt="Logo" height="500"/>
 
-Try the tool: [GitHub Profile README Generator](https://rahuldkjain.github.io/gh-profile-readme-generator)
+
 
 ## 🧐 Features
 
@@ -51,21 +49,6 @@ Just fill in the details such as `Name`, `Tagline`, `Dev Platforms Username`, `C
 
 - **Visitors Counter Badge**
 
-- **GitHub Profile Stats Card**
-
-- **GitHub Top Skills**
-
-- **GitHub Streak Stats**
-
-- **Dynamic Dev(.)to Blogs** (GitHub Action)
-
-- **Dynamic Medium Blogs** (GitHub Action)
-
-- **Dynamic Personal Blogs from RSS Feed** (GitHub Action)
-
-- **Wakatime Stats** [contribute](https://github.com/develogo/beer_store/issues/115)
-
-- **Buy Me A Coffee button**
 
 Click on `Generate README` to get your README in `markdown`.
 You can preview the README too.
@@ -109,6 +92,7 @@ Please contribute using [GitHub Flow](https://guides.github.com/introduction/flo
 - [Flutter](https://flutter.dev/): for building the app
 - [Go router](https://pub.dev/packages/go_router): for routing
 - [Get it](https://pub.dev/packages/get_it): for dependency injection
+
 
 <hr>
 <p align="center">
