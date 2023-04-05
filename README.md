@@ -9,19 +9,19 @@
 
 <p align="center">
 <a href="https://github.com/develogo/beer_store/blob/master/LICENSE" target="blank">
-<img src="https://img.shields.io/github/license/develogo/beer_store?style=flat-square" alt="github-profile-readme-generator license" />
+<img src="https://img.shields.io/github/license/develogo/beer_store?style=flat-square" />
 </a>
 <a href="https://github.com/develogo/beer_store/fork" target="blank">
-<img src="https://img.shields.io/github/forks/develogo/beer_store?style=flat-square" alt="github-profile-readme-generator forks"/>
+<img src="https://img.shields.io/github/forks/develogo/beer_store?style=flat-square" />
 </a>
 <a href="https://github.com/develogo/beer_store/stargazers" target="blank">
-<img src="https://img.shields.io/github/stars/develogo/beer_store?style=flat-square" alt="github-profile-readme-generator stars"/>
+<img src="https://img.shields.io/github/stars/develogo/beer_store?style=flat-square" />
 </a>
 <a href="https://github.com/develogo/beer_store/issues" target="blank">
-<img src="https://img.shields.io/github/issues/develogo/beer_store?style=flat-square" alt="github-profile-readme-generator issues"/>
+<img src="https://img.shields.io/github/issues/develogo/beer_store?style=flat-square" />
 </a>
 <a href="https://github.com/develogo/beer_store/pulls" target="blank">
-<img src="https://img.shields.io/github/issues-pr/develogo/beer_store?style=flat-square" alt="github-profile-readme-generator pull-requests"/>
+<img src="https://img.shields.io/github/issues-pr/develogo/beer_store?style=flat-square" />
 </a>
 </p>
 
