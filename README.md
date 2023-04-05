@@ -80,6 +80,10 @@ Please contribute using [GitHub Flow](https://guides.github.com/introduction/flo
 - [Go router](https://pub.dev/packages/go_router): for routing
 - [Get it](https://pub.dev/packages/get_it): for dependency injection
 
+## 💡 Design
+
+- [Dribbble](https://dribbble.com/shots/6338420-): for designing the app by [Emre Mazursky](https://dribbble.com/emred)
+
 
 <hr>
 <p align="center">
