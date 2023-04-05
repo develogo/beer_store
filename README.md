@@ -34,10 +34,10 @@
 
 ## 🚀 Screenshots
 
-<img src="https://raw.githubusercontent.com/develogo/beer_store/main/assets/prints/1.jpg" alt="Logo" height="500"/>
-<img src="https://raw.githubusercontent.com/develogo/beer_store/main/assets/prints/2.jpg" alt="Logo" height="500"/>
-
-
+<p float="left">
+  <img src="https://raw.githubusercontent.com/develogo/beer_store/main/assets/prints/1.jpg" alt="Logo" height="500"/>
+  <img src="https://raw.githubusercontent.com/develogo/beer_store/main/assets/prints/2.jpg" alt="Logo" height="500"/>
+</p>
 
 ## 🧐 Features
 
