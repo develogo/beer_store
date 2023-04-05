@@ -39,13 +39,7 @@
   <img src="https://raw.githubusercontent.com/develogo/beer_store/main/assets/prints/2.jpg" alt="Logo" height="500"/>
 </p>
 
-<!-- ## 🧐 Features
 
-Text
-
-- **Uniform Dev Icons**
-
-Click on `DEMO` -->
 ## 🛠️ Installation Steps
 
 1. Clone the repository
