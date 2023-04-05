@@ -41,18 +41,13 @@
 
 ## 🧐 Features
 
-Just fill in the details such as `Name`, `Tagline`, `Dev Platforms Username`, `Current Work`, `Portfolio`, `Blog`, etc. with a minimal UI.
+Text
 
 - **Uniform Dev Icons**
 
-- **Uniform Social Icons**
-
-- **Visitors Counter Badge**
 
 
-Click on `Generate README` to get your README in `markdown`.
-You can preview the README too.
-
+Click on `DEMO`
 ## 🛠️ Installation Steps
 
 1. Clone the repository
