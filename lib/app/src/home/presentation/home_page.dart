@@ -33,6 +33,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     )..forward(from: 0.0);
   }
 
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   void _onTap(int index) {
     _controller.forward(from: 0.0);
     setState(() {
