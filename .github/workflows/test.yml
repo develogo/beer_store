@@ -10,17 +10,20 @@ jobs:
   flutter_test:
     name: Flutter analyze, format and test
     runs-on: ubuntu-latest
+    env:
+      FLUTTER_VERSION: "3.7.7"
     steps:
       # Set up Flutter.
       - uses: subosito/flutter-action@v2
         with:
           channel: "stable"
-      - run: flutter doctor -v
+          flutter-version: ${{ env.FLUTTER_VERSION }}
 
       # Checkout code and get packages.
       - name: Checkout code
         uses: actions/checkout@v3
       - run: flutter pub get -v
+        if: success()
 
       # Analyze, check formatting, and run unit tests.
       - run: flutter analyze
