@@ -1,16 +1,17 @@
-import 'package:flutter/material.dart';
+import 'package:beer_store/app/config/app.dart';
+import 'package:beer_store/app/di/di_setup.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('Test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MaterialApp(
-      home: Scaffold(
-        body: Text('Hello World'),
-      ),
-    ));
+  testWidgets('Test that app can be loaded without errors',
+      (WidgetTester tester) async {
+    // Setup dependencies
+    configureDependencies();
 
-    // Verify that our counter starts at 0.
-    expect(find.text('Hello World'), findsOneWidget);
+    // Build the app and trigger a frame.
+    await tester.pumpWidget(const App());
+
+    // Verify that the app was loaded without errors.
+    expect(tester.takeException(), isNull);
   });
 }
