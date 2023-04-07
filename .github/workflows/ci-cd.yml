@@ -9,17 +9,28 @@ jobs:
   flutter_test:
     name: Flutter analyze, format and test
     runs-on: ubuntu-latest
+    env:
+      FLUTTER_VERSION: "3.7.7"
     steps:
+      # Cache Flutter dependencies
+      - name: Cache Flutter dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.pub-cache/hosted/pub.dartlang.org
+          key: ${{ runner.os }}-flutter-${{ hashFiles('**/pubspec.lock') }}
+          restore-keys: ${{ runner.os }}-flutter-
+
       # Set up Flutter.
       - uses: subosito/flutter-action@v2
         with:
           channel: "stable"
-      - run: flutter doctor -v
+          flutter-version: ${{ env.FLUTTER_VERSION }}
 
       # Checkout code and get packages.
       - name: Checkout code
         uses: actions/checkout@v3
       - run: flutter pub get -v
+        if: success()
 
       # Analyze, check formatting, and run unit tests.
       - run: flutter analyze
@@ -27,15 +38,15 @@ jobs:
         run: flutter format --dry-run --set-exit-if-changed .
       - run: flutter test --coverage
       - run: flutter test --machine > test-results.json
-      # - uses: dorny/test-reporter@v1.4.2
-      #   with:
-      #     name: test-results
-      #     path: test-results.json
-      #     reporter: flutter-json
-      # - uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
-      #   with:
-      #     min_coverage: 80
-
+      - uses: dorny/test-reporter@v1.4.2
+        with:
+          name: test-results
+          path: test-results.json
+          reporter: flutter-json
+      - uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
+        with:
+          min_coverage: 80
+          
   build:
     needs: flutter_test
     runs-on: ubuntu-latest
