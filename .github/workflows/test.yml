@@ -37,7 +37,7 @@ jobs:
       # Analyze, check formatting, and run unit tests.
       - run: flutter analyze
       - name: Ensure the Dart code is formatted correctly
-        run: flutter format --dry-run --set-exit-if-changed .
+        run: dart format --dry-run --set-exit-if-changed .
       - run: flutter test --coverage
       - run: flutter test --machine > test-results.json
       - uses: dorny/test-reporter@v1.4.2
