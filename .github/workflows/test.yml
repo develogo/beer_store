@@ -61,12 +61,12 @@ jobs:
         id: get_statuses
         run: |
           statuses=()
-          for job in ${{ toJson(needs) }}; do
-            status=$(echo $job | jq -r '.outputs.status')
-            name=$(echo $job | jq -r '.name')
-            statuses+=("{\"name\": \"$name\", \"status\": \"$status\"}")
+          for job_name in "${!jobs[@]}"; do
+            job=${jobs[$job_name]}
+            status=$(echo "$job" | jq -r '.outputs.status')
+            statuses+=("{\"name\": \"$job_name\", \"status\": \"$status\"}")
           done
-          echo "::set-output name=statuses::[$(echo "${statuses[@]}")]" 
+          echo "::set-output name=statuses::[$(echo "${statuses[@]}")]"
       - name: Invoke deployment hook
         uses: distributhor/workflow-webhook@v2
         env:
