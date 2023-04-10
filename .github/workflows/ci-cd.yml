@@ -67,9 +67,8 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: |
-            develogo/beerstore:${{ vars.BUILD_NAME }}
-            develogo/beerstore:latest # adiciona a tag "latest"
+          tags: "develogo/beerstore:${{ vars.BUILD_NAME }}, develogo/beerstore:latest"
+
 
   status_webhook:
     name: Send notification to webhook
