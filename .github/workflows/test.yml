@@ -57,20 +57,10 @@ jobs:
       - flutter_test
     if: ${{ always() }}
     steps:
-      - name: Get job statuses
-        id: get_statuses
-        run: |
-          statuses=()
-          for job_name in "${!jobs[@]}"; do
-            job=${jobs[$job_name]}
-            status=$(echo "$job" | jq -r '.outputs.status')
-            statuses+=("{\"name\": \"$job_name\", \"status\": \"$status\"}")
-          done
-          echo "::set-output name=statuses::[$(echo "${statuses[@]}")]"
       - name: Invoke deployment hook
         uses: distributhor/workflow-webhook@v2
         env:
           webhook_url: ${{ secrets.WEBHOOK_URL }}
           webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
-          data: '{"repository": "${{ env.NAME }}","execution-link": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}","jobs": ${{ steps.get_statuses.outputs.statuses }}}'
+          data: '{"repository": "${{ env.NAME }}","execution-link": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}","jobs": [ ${{ toJSON(needs.flutter_test) }} ], "teste": "${{ toJSON(needs) }}'
 
