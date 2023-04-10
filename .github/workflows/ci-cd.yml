@@ -62,12 +62,12 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Print build name
-        run: echo ${{ env.BUILD_NAME }}
+        run: echo "${{ env.BUILD_NAME }}"
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: develogo/beerstore:${{ secrets.BUILD_NAME }}
+          tags: develogo/beerstore:${{ env.BUILD_NAME }}
 
   status_webhook:
     name: Send notification to webhook
