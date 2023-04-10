@@ -67,7 +67,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: develogo/beerstore:${{ env.BUILD_NAME }}
+          tags: develogo/beerstore:${{ secrets.BUILD_NAME }}
 
   status_webhook:
     name: Send notification to webhook
