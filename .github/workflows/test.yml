@@ -51,15 +51,16 @@ jobs:
   status_webhook:
     name: Send notification to webhook
     runs-on: ubuntu-latest
-    needs: 
+    env:
+      NAME: "Beer Store"
+    needs:
       - flutter_test
-    if: ${{ always() }} # You always want to be notified: success, failure, or cancelled
+    if: ${{ always() }}
     steps:
       - name: Invoke deployment hook
         uses: distributhor/workflow-webhook@v2
         env:
           webhook_url: ${{ secrets.WEBHOOK_URL }}
           webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
-          data: '{ "execution-link": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}","jobs": [ ${{ toJSON(needs.flutter_test) }} ]}'
-      - name: print
-        run: echo '${{ toJSON(needs.flutter_test) }}'
+          data: '{"repository": "${{ env.NAME }}","execution-link": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}","jobs": [ ${{ toJSON(needs.flutter_test) }}, ${{ toJSON(needs.build) }} ]}'
+
