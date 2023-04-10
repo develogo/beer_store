@@ -50,7 +50,7 @@ jobs:
       #     min_coverage: 80
     outputs:
       status: ${{ job.status }}
-      job_name: ${{ job.name }}
+      job_name: "Felipe"
   status_webhook:
     name: Send notification to webhook
     runs-on: ubuntu-latest
