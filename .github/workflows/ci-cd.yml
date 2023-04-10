@@ -61,6 +61,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Print build name
+        run: echo $BUILD_NAME
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
