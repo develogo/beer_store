@@ -48,6 +48,9 @@ jobs:
       # - uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
       #   with:
       #     min_coverage: 80
+    outputs:
+      status: ${{ job.status }}
+      job_name: ${{ job.name }}
   status_webhook:
     name: Send notification to webhook
     runs-on: ubuntu-latest
@@ -57,13 +60,6 @@ jobs:
       - flutter_test
     if: ${{ always() }}
     steps:
-      - name: Send individual job status
-        run: |
-          for job in ${{ needs.flutter_test.outputs.statuses }}; do
-            name=$(echo $job | jq -r '.name')
-            status=$(echo $job | jq -r '.status')
-            curl -X POST -H 'Content-Type: application/json' -d '{"name":"'"$name"'", "status":"'"$status"'"}' ${{ secrets.WEBHOOK_URL }}
-          done
       - name: Invoke deployment hook
         uses: distributhor/workflow-webhook@v2
         env:
