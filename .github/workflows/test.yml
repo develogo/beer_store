@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FLUTTER_VERSION: "3.7.7"
+      JOB_NAME: "Flutter analyze, format and test"
     steps:
       # Cache Flutter dependencies
       - name: Cache Flutter dependencies
@@ -39,8 +40,7 @@ jobs:
       - name: Ensure the Dart code is formatted correctly
         run: dart format --set-exit-if-changed .
     outputs:
-      status: ${{ job.status }}
-      job_name: ${{ job.name }}
+      job_name: ${{ env.JOB_NAME }}
 
   status_webhook:
     name: Send notification to webhook
