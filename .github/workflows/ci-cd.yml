@@ -61,13 +61,16 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Extract tag name
+        shell: bash
+        run: echo "VERSION_TAG=${GITHUB_REF##*/}" >> $GITHUB_ENV
       - name: Print build name
-        run: echo "${{ vars.BUILD_NAME }}"
+        run: echo "Build version ${{ env.VERSION_TAG }}"
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: "develogo/beerstore:${{ vars.BUILD_NAME }}, develogo/beerstore:latest"
+          tags: "develogo/beerstore:${{ env.VERSION_TAG }}, develogo/beerstore:latest"
 
 
   status_webhook:
