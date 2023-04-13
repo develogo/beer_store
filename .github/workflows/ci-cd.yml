@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FLUTTER_VERSION: "3.7.7"
+      JOB_NAME: "Flutter analyze, format and test"
     steps:
       # Cache Flutter dependencies
       - name: Cache Flutter dependencies
@@ -36,7 +37,9 @@ jobs:
       # Analyze, check formatting, and run unit tests.
       - run: flutter analyze
       - name: Ensure the Dart code is formatted correctly
-        run: flutter format --dry-run --set-exit-if-changed .
+        run: dart format --set-exit-if-changed .
+    outputs:
+      job_name: ${{ env.JOB_NAME }}
       # - run: flutter test --coverage
       # - run: flutter test --machine > test-results.json
       # - uses: dorny/test-reporter@v1.4.2
@@ -51,6 +54,8 @@ jobs:
   build:
     needs: flutter_test
     runs-on: ubuntu-latest
+    env:
+      JOB_NAME: "Flutter build"
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -71,6 +76,8 @@ jobs:
         with:
           push: true
           tags: "develogo/beerstore:${{ env.VERSION_TAG }}, develogo/beerstore:latest"
+    outputs:
+      job_name: ${{ env.JOB_NAME }}
 
 
   status_webhook:
