@@ -21,7 +21,8 @@ WORKDIR /app/
 # Futter pub get
 RUN flutter pub get
 # Build the app
-RUN flutter build web
+ARG BUILD_VERSION=${VERSION_TAG}
+RUN flutter build web --release --build-name=$BUILD_VERSION
 # Stage 2 - Create the run-time image
 FROM nginx:1.21.1-alpine
 COPY --from=build-env /app/build/web /usr/share/nginx/html
