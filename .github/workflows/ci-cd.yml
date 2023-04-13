@@ -21,6 +21,7 @@ jobs:
           path: ~/.pub-cache/hosted/pub.dartlang.org
           key: ${{ runner.os }}-flutter-${{ hashFiles('**/pubspec.lock') }}
           restore-keys: ${{ runner.os }}-flutter-
+          node-version: 16
 
       # Set up Flutter.
       - uses: subosito/flutter-action@v2
