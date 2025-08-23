@@ -27,7 +27,7 @@
 
 
 <p align="center">
-    <a href="https://beerstore.develogo.com" target="blank">View Demo</a>
+    <a href="https://beerstore.develogo.dev" target="blank">View Demo</a>
     ·
     <a href="https://github.com/develogo/beer_store/issues/new/choose">Report Bug</a>
 </p>
