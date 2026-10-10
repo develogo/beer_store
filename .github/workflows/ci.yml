@@ -16,8 +16,15 @@ jobs:
       - name: Checkout app repo
         uses: actions/checkout@v4
 
-      - name: Build, push and update stacks
-        uses: develogo/git-actions/actions/build_push_and_update_stacks@v1
+      - name: Checkout git-actions
+        uses: actions/checkout@v4
+        with:
+          repository: develogo/git-actions
+          token: ${{ secrets.STACKS_REPO_TOKEN }}
+          path: git-actions
+
+      - name: Build, push and open PR in stacks
+        uses: ./git-actions/actions/build_push_and_update_stacks
         with:
           image_name: beer-store
           image_repo: develogo/beer-store
